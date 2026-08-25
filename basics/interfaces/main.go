@@ -22,7 +22,7 @@ type Circulo struct {
 }
 
 func (c Circulo) Area() float64      { return 3.1416 * c.Radio * c.Radio }
-func (c Circulo) Perimetro() float64 { return 2 * 3.1416 * c.Radio }
+func (c Circulo) Perimetro() float64 { return 2 * 3.1416 * c.Radio } // Si comentamos este método, Circulo deja de implementar Figura y no se puede pasar a describir().
 
 // esta función no sabe ni le importa si recibe un Rectangulo o un Circulo,
 // solo le importa que cumpla la interface Figura. Esto es polimorfismo.
