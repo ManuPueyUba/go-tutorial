@@ -37,6 +37,7 @@ func main() {
 	generar := func(out chan<- int, n int) { // out: solo se puede enviar
 		for i := 0; i < n; i++ {
 			out <- i
+			fmt.Println("enviado:", i)
 		}
 		close(out) // close() avisa "no voy a mandar nada más"
 	}
