@@ -85,7 +85,8 @@ func main() {
 
 func ejemploDefer() {
 	fmt.Println("1: entrando a la función")
-	defer fmt.Println("3: esto se imprime al salir (defer)")
+	defer fmt.Println("4: esto se imprime al salir (defer 2)")
+	defer fmt.Println("3: esto se imprime al salir (defer 1)")
 	fmt.Println("2: haciendo trabajo")
 	// los defer se apilan: si hay varios, se ejecutan en orden LIFO
 }
