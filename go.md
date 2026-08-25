@@ -3,8 +3,8 @@
 ## Contenido del tutorial
 
 Cada carpeta es un programa independiente y comentado en español. Se corre
-parado en la carpeta con `go run main.go` (o `go run server.go` /
-`go run client.go` en el caso de sockets, que son dos programas).
+parado en la carpeta con `go run main.go`. En el caso de sockets hay dos
+subcarpetas (`server/` y `client/`), cada una con su propio `main.go`.
 
 **basics/** — fundamentos del lenguaje
 - `hello/` — programa mínimo

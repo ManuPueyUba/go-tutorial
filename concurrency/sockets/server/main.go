@@ -9,8 +9,8 @@ package main
 // Este archivo es un servidor TCP "echo": acepta conexiones y devuelve
 // en mayúsculas lo que cada cliente le manda, línea por línea.
 //
-// Corré esto en una terminal:  go run server.go
-// Y en otra el cliente:        go run client.go
+// Corré esto en una terminal (desde sockets/server/):  go run main.go
+// Y en otra el cliente (desde sockets/client/):        go run main.go
 
 import (
 	"bufio"
@@ -62,6 +62,10 @@ func manejarConexion(conn net.Conn) {
 
 		respuesta := strings.ToUpper(linea)
 		fmt.Fprintln(conn, respuesta) // escribir en la conexión = mandarle datos al cliente
+	}
+	// scanner.Err() es nil en EOF normal; cualquier otro valor es un error real
+	if err := scanner.Err(); err != nil {
+		fmt.Println("error leyendo de", remoto, ":", err)
 	}
 	fmt.Println("conexión cerrada por", remoto)
 }
